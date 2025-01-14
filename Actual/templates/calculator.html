@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Carbon Calculator{% endblock %}
+
+{% block content %}
+
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#house">House</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#car">Car</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#motorbike">Motorbike</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#bus and rail">Bus and Rail</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#others">Others</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#results">Results</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+
+    <div class="tab-pane container active" id="house">
+
+        <form method="get">
+            <div>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td><label for="num-household">Number of People in Household: </label></td>
+                        <td> <input type="number" id="num-household" name="num-household"></td>
+                    </tr>
+                        <td><label for="electricity">Electricity (kWh):</label></td>
+                        <td> <input type="number" id="electricity" name="electricity"> </td>
+                    <tr>
+                        <td><label for="natural-gas">Natural Gas (kWh):</label></td>
+                        <td> <input type="number" id="natural-gas" name="natural-gas"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="submit" value="Submit"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="tab-pane container fade" id="flights">
+
+
+
+    </div>
+    <!--    <div class="tab-pane container fade" id="car">...</div>-->
+    <!--    <div class="tab-pane container fade" id="motorbike">...</div>-->
+    <!--    <div class="tab-pane container fade" id="bus and rail">...</div>-->
+    <!--    <div class="tab-pane container fade" id="others">...</div>-->
+    <!--    <div class="tab-pane container fade" id="results">...</div>-->
+</div>
+
+{% endblock %}

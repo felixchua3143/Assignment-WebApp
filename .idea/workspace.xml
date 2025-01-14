@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d055d725-f54d-4111-bb5e-28b0fafcff2d" name="Changes" comment="abc">
+      <change afterPath="$PROJECT_DIR$/.idea/SimpleWebApp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actual/Forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actual/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actual/templates/calculator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actual/templates/graph.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actual/templates/includes/_navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actual/templates/includes/_notifications.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Actual/templates/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2nVfJ4bEEZcXnkM9ba5Mf23blNX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.User.executor": "Run",
+    "Python.__init__.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/felix/Documents/School Stuff/Assignment-WebApp",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Document\Github\Assignment-WebApp\Prac" />
+      <recent name="C:\Users\felix\Documents\GitHub\AppDev\SimpleWebApp\templates\includes" />
+      <recent name="C:\Users\felix\Documents\GitHub\AppDev\SimpleWebApp\templates" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d055d725-f54d-4111-bb5e-28b0fafcff2d" name="Changes" comment="" />
+      <created>1729063088588</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729063088588</updated>
+    </task>
+    <task id="LOCAL-00001" summary="abc">
+      <option name="closed" value="true" />
+      <created>1732084001373</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732084001373</updated>
+    </task>
+    <task id="LOCAL-00002" summary="abc">
+      <option name="closed" value="true" />
+      <created>1732592206262</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732592206262</updated>
+    </task>
+    <task id="LOCAL-00003" summary="abc">
+      <option name="closed" value="true" />
+      <created>1732592236829</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732592236829</updated>
+    </task>
+    <task id="LOCAL-00004" summary="abc">
+      <option name="closed" value="true" />
+      <created>1732592725296</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732592725296</updated>
+    </task>
+    <task id="LOCAL-00005" summary="abc">
+      <option name="closed" value="true" />
+      <created>1732594761080</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732594761080</updated>
+    </task>
+    <task id="LOCAL-00006" summary="abc">
+      <option name="closed" value="true" />
+      <created>1733199650775</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733199650775</updated>
+    </task>
+    <task id="LOCAL-00007" summary="abc">
+      <option name="closed" value="true" />
+      <created>1736788324440</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1736788324440</updated>
+    </task>
+    <task id="LOCAL-00008" summary="abc">
+      <option name="closed" value="true" />
+      <created>1736788771436</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1736788771436</updated>
+    </task>
+    <task id="LOCAL-00009" summary="abc">
+      <option name="closed" value="true" />
+      <created>1736788815175</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1736788815175</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="abc" />
+    <option name="LAST_COMMIT_MESSAGE" value="abc" />
+  </component>
+</project>
