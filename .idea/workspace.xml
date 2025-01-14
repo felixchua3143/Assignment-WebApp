@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d055d725-f54d-4111-bb5e-28b0fafcff2d" name="Changes" comment="abc">
-      <change afterPath="$PROJECT_DIR$/.idea/SimpleWebApp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Actual/Forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Actual/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Actual/templates/calculator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Actual/templates/graph.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Actual/templates/includes/_navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Actual/templates/includes/_notifications.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Actual/templates/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="d055d725-f54d-4111-bb5e-28b0fafcff2d" name="Changes" comment="abc" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,19 +35,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.User.executor": "Run",
-    "Python.__init__.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/felix/Documents/School Stuff/Assignment-WebApp",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.User.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/felix/Documents/School Stuff/Assignment-WebApp&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\Document\Github\Assignment-WebApp\Prac" />
@@ -157,7 +143,31 @@
       <option name="project" value="LOCAL" />
       <updated>1736788815175</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="abc">
+      <option name="closed" value="true" />
+      <created>1736873826641</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1736873826641</updated>
+    </task>
+    <task id="LOCAL-00011" summary="abc">
+      <option name="closed" value="true" />
+      <created>1736873873681</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1736873873681</updated>
+    </task>
+    <task id="LOCAL-00012" summary="abc">
+      <option name="closed" value="true" />
+      <created>1736873895987</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1736873895987</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
