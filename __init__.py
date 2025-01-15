@@ -12,7 +12,7 @@ def home():
 def contact_us():
     return render_template('contactUs.html')
 
-@app.route('/createUser', methods=['GET', 'POST'])
+@app.route('/createUser.html', methods=['GET', 'POST'])
 def create_user():
     create_user_form = CreateUserForm(request.form)
     if request.method == 'POST' and create_user_form.validate():

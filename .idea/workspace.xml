@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d055d725-f54d-4111-bb5e-28b0fafcff2d" name="Changes" comment="abc">
-      <change afterPath="$PROJECT_DIR$/CarbonForm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forms2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__init__2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carbonform.db.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/createUser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/createUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Forms2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/User.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/calculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/calculator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/_navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/_notifications.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/_notifications.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736915700378</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="abc">
+      <option name="closed" value="true" />
+      <created>1736929901430</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1736929901433</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
