@@ -6,46 +6,68 @@
 
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#house">House</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#utility">Utility</a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#car">Car</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#food">Food</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#motorbike">Motorbike</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#spending">Spending</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#bus and rail">Bus and Rail</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#transport">Transport</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#others">Others</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#results">Results</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#travel">Travels</a>
     </li>
 </ul>
 
 <div class="tab-content">
 
-    <div class="tab-pane container active" id="house">
+    <div class="tab-pane container active" id="utility">
 
-        <form method="get">
+        <form method="post">
             <div>
                 <table>
                     <tbody>
                     <tr>
                         <td><label for="num-household">Number of People in Household: </label></td>
-                        <td> <input type="number" id="num-household" name="num-household"></td>
+                        <td><input type="number" id="num-household" name="num-household"></td>
                     </tr>
-                        <td><label for="electricity">Electricity (kWh):</label></td>
-                        <td> <input type="number" id="electricity" name="electricity"> </td>
+                    <td><label for="electricity">Electricity:</label></td>
+                    <td><select id="electricity" required>
+                        <option value="e select-one" selected="selected"> Select One</option>
+                        <option value="e <50"> <$50</option>
+                        <option value="e 50 - 100"> $50 - $100</option>
+                        <option value="e 101 - 150"> $101 - $150</option>
+                        <option value="e 151 - 200"> $151 - $200</option>
+                        <option value="e >200"> >$200</option>
+                    </select></td>
                     <tr>
-                        <td><label for="natural-gas">Natural Gas (kWh):</label></td>
-                        <td> <input type="number" id="natural-gas" name="natural-gas"></td>
+                        <td><label for="gas">Gas:</label></td>
+                        <td><select id="gas" required>
+                            <option value="g select-one" selected="selected"> Select One</option>
+                            <option value="g 0"> $0</option>
+                            <option value="g <10"> <$10</option>
+                            <option value="g 11 - 15"> $11 - $15</option>
+                            <option value="g 16 - 20"> $16 - $20</option>
+                            <option value="g >20"> >$20</option>
+                        </select></td>
                     </tr>
                     <tr>
-                        <td> <input type="submit" value="Submit"></td>
+                        <td><label for="water">Water:</label></td>
+                        <td><select id="water" required>
+                            <option value="w select-one" selected="selected"> Select One</option>
+                            <option value="w <25"> <$25</option>
+                            <option value="w 25 - 50"> $25 - $50</option>
+                            <option value="w 51 - 70"> $51 - $70</option>
+                            <option value="w 71 - 90"> $71 - $90</option>
+                            <option value="w >90"> >$90</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Submit"></td>
                     </tr>
                     </tbody>
                 </table>
@@ -54,16 +76,276 @@
 
     </div>
 
-    <div class="tab-pane container fade" id="flights">
+    <div class="tab-pane container fade" id="food">
 
-
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="food">Which foods make up part of your diet?</label>
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label for="f select-all">
+                        <input type="checkbox" name="food" id="f select-all" value="select-all">
+                        Select All
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="f eggs">
+                        <input type="checkbox" name="food" id="f eggs" value="eggs">
+                        Eggs
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="f vegetables">
+                        <input type="checkbox" name="food" id="f vegetables" value="vegetables">
+                        Vegetables
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="f fruits">
+                        <input type="checkbox" name="food" id="f fruits" value="fruits">
+                        Fruits
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="f grains">
+                        <input type="checkbox" name="food" id="f grains" value="grains">
+                        Grains
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="f dairy-products">
+                        <input type="checkbox" name="food" id="f dairy-products" value="dairy-products">
+                        Dairy Products
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="f beef">
+                        <input type="checkbox" name="food" id="f beef" value="beef">
+                        Beef
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="f pork">
+                        <input type="checkbox" name="food" id="f pork" value="pork">
+                        Pork
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="f chicken-and-duck">
+                        <input type="checkbox" name="food" id="f chicken-and-duck" value="chicken-and-duck">
+                        Chicken and Duck
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="f mutton">
+                        <input type="checkbox" name="food" id="f mutton" value="mutton">
+                        Mutton
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="f seafood">
+                        <input type="checkbox" name="food" id="f seafood" value="seafood">
+                        Seafood
+                    </label>
+                </div>
+            </div>
+        </div>
 
     </div>
-    <!--    <div class="tab-pane container fade" id="car">...</div>-->
-    <!--    <div class="tab-pane container fade" id="motorbike">...</div>-->
-    <!--    <div class="tab-pane container fade" id="bus and rail">...</div>-->
-    <!--    <div class="tab-pane container fade" id="others">...</div>-->
-    <!--    <div class="tab-pane container fade" id="results">...</div>-->
-</div>
+    <div class="tab-pane container fade" id="spending">
 
+        <form method="post">
+            <div>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td><label for="cloth-footwear">Clothing and footwear </label></td>
+                        <td><select id="cloth-footwear">
+                            <option value="select-one" selected="selected"> Select One</option>
+                            <option value="cf <30"> <$30</option>
+                            <option value="cf 30 - 100"> $30 - $100</option>
+                            <option value="cf >100"> >$100</option>
+                        </select></td>
+                    </tr>
+                    <td><label for="recreational_activities">Recreational Activities:</label></td>
+                    <td><select id="recreational_activities">
+                        <option value="select-one" selected="selected"> Select One</option>
+                        <option value="<60"> <$60</option>
+                        <option value="60 - 300"> $60 - $300</option>
+                        <option value=">300"> >$300</option>
+                    </select></td>
+                    <tr>
+                        <td><label for="furn_house_equipment_maintenance">Furnishings, Household Equipment, Household
+                            Maintenance:</label></td>
+                        <td><select id="furn_house_equipment_maintenance">
+                            <option value="select-one" selected="selected"> Select One</option>
+                            <option value="<100"> <$100</option>
+                            <option value="100 - 300"> $100 - $300</option>
+                            <option value=">300"> >$300</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="health">Health (and pharmaceuticals):</label></td>
+                        <td><select id="health">
+                            <option value="select-one" selected="selected"> Select One</option>
+                            <option value="<50"> <$50</option>
+                            <option value="50 - 200"> $50 - $200</option>
+                            <option value=">200"> >$200</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="com-service">Communication Services (Mobile phone, internet services, and
+                            postage):</label></td>
+                        <td><select id="com-service">
+                            <option value="cs select-one" selected="selected"> Select One</option>
+                            <option value="cs <40"> <$40</option>
+                            <option value="cs 40 - 200"> $40 - $200< /option>
+                            <option value="cs >200"> >$200</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ed-services">Educational Services:</label></td>
+                        <td><select id="ed-services">
+                            <option value="eds select-one" selected="selected"> Select One</option>
+                            <option value="eds <100"> <$100</option>
+                            <option value="eds 100 - 200"> $100 - $200</option>
+                            <option value="eds >200"> >$200</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="other">Other Purchased Goods and Services (Laundry, haircut, insurance,
+                            alcoholic beverages and tobacco): </label></td>
+                        <td><select id="other">
+                            <option value="o select-one" selected="selected"> Select One</option>
+                            <option value="o 0"> <$0</option>
+                            <option value="o <120"> <$120</option>
+                            <option value="o 120 - 500"> $120 - $500</option>
+                            <option value="o >500"> >$500</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Submit"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+    </div>
+    <div class="tab-pane container fade" id="transport">
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="mrt/lrt">MRT/LRT</label>
+            <div class="col-md-4">
+                <input id="mrt/lrt" name="mrt/lrt" type="number" placeholder="0 minutes" class="form-control input-md"
+                       required="">
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="bus">Bus</label>
+                    <div class="col-md-4">
+                        <input id="bus" name="bus" type="number" placeholder="0 minutes" class="form-control input-md"
+                               required="">
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="ride_services">Ride-hailing services (Taxi, Grab, Gojek,
+                        etc)</label>
+                    <div class="col-md-4">
+                        <input id="ride_services" name="ride_services" type="number" placeholder="0 minutes"
+                               class="form-control input-md" required="">
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="motorcycle">Motorcycle</label>
+                    <div class="col-md-4">
+                        <input id="motorcycle" name="motorcycle" type="number" placeholder="0 minutes"
+                               class="form-control input-md" required="">
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Drive or ride as a passenger in a car</label>
+                    <div class="col-md-4">
+                        <input id="textinput" name="textinput" type="number" placeholder="0 minutes"
+                               class="form-control input-md"
+                               required="">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane container fade" id="travel">
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="sea">Southeast Asia</label>
+            <div class="col-md-4">
+                <input id="sea" name="sea" type="number" placeholder="0 times" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="ap">Asia Pacific</label>
+            <div class="col-md-4">
+                <input id="ap" name="ap" type="number" placeholder="0 times" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="e/a">Europe / Africa</label>
+            <div class="col-md-4">
+                <input id="e/a" name="e/a" type="number" placeholder="0 times" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="oc">Oceania</label>
+            <div class="col-md-4">
+                <input id="oc" name="oc" type="number" placeholder="0 times" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="am">Americas</label>
+            <div class="col-md-4">
+                <input id="am" name="am" type="number" placeholder="0 minutes" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="travel_class">Which travel class do you usually travel
+                in?</label>
+            <div class="col-md-4">
+                <select id="travel_class" name="travel_class" class="form-control">
+                    <option value="tc select-one">Select One</option>
+                    <option value="tc b/e">Budget/Economy</option>
+                    <option value="tc pe">Premium Economy</option>
+                    <option value="tc b">Business</option>
+                    <option value="tc f">First</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="night_staycation">How many nights of staycation did you take in
+                this
+                month?</label>
+            <div class="col-md-4">
+                <input id="night_staycation" name="night_staycation" type="number" placeholder="0"
+                       class="form-control input-md" required="">
+
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

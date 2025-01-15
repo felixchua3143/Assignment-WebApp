@@ -1,8 +1,7 @@
-from wtforms import Form, StringField, RadioField, SelectField, TextAreaField, DecimalField, DecimalRangeField, validators
+from wtforms import Form, StringField, RadioField, SelectField, TextAreaField, validators, DateField, DecimalField, SubmitField
 
-class CreateCarbonForm(Form):
-    electricity =  DecimalField("Electricity", [validators.input_required(message= "Please eneter a number")])
-    if electricity.isalpha():
-        state = True
-    else:
-        state = False
+
+class CreateGraphForm(Form):
+    date = DateField("Date", validators=None, format="%Y-%m-%d")
+    value = DecimalField("Value", places=2)
+    submit = SubmitField("Submit Value")
