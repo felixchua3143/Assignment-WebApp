@@ -1,6 +1,6 @@
 from flask import Flask, render_template,request, redirect, url_for
 from Forms import CreateGraphForm
-import shelve
+import shelve, User
 
 app = Flask(__name__)
 @app.route('/', methods=["GET", "POST"])
@@ -25,7 +25,7 @@ def create_graph():
         except:
             print("Error in retrieving Graph from graph.db")
 
-        graph = (create_graph_form.date, create_graph_form.value)
+        graph = User.User(create_graph_form.date, create_graph_form.value)
         graph_dict[graph.get_graph_id()] = graph
         db["Graphs"] = graph_dict
 
