@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d055d725-f54d-4111-bb5e-28b0fafcff2d" name="Changes" comment="abc">
-      <change afterPath="$PROJECT_DIR$/Forms2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__init__2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/carbonform.db.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/createUser.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/createUser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user.db.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user.db.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user.db.dir" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User2.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/createUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/createUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/_navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +272,31 @@
       <option name="project" value="LOCAL" />
       <updated>1736929901433</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="abc">
+      <option name="closed" value="true" />
+      <created>1736929928787</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1736929928787</updated>
+    </task>
+    <task id="LOCAL-00018" summary="abc">
+      <option name="closed" value="true" />
+      <created>1736929934182</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1736929934182</updated>
+    </task>
+    <task id="LOCAL-00019" summary="abc">
+      <option name="closed" value="true" />
+      <created>1736930870950</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1736930870952</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

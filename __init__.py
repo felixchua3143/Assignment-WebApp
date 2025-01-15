@@ -12,7 +12,7 @@ def home():
 def contact_us():
     return render_template('contactUs.html')
 
-@app.route('/createUser.html', methods=['GET', 'POST'])
+@app.route('/createUser', methods=['GET', 'POST'])
 def create_user():
     create_user_form = CreateUserForm(request.form)
     if request.method == 'POST' and create_user_form.validate():
@@ -24,14 +24,14 @@ def create_user():
         except:
             print("Error in retrieving Users from user.db.")
 
-        user = User.User(create_user_form.first_name.data, create_user_form.last_name.data, create_user_form.gender.data, create_user_form.membership.data, create_user_form.remarks.data)
+        user = User.User(create_user_form.electricity.data, create_user_form.num_household.data, create_user_form.water.data, create_user_form.gas.data, create_user_form.food.data)
         users_dict[user.get_user_id()] = user
         db['Users'] = users_dict
 
         # Test codes
         users_dict = db['Users']
         user = users_dict[user.get_user_id()]
-        print(user.get_first_name(), user.get_last_name(), "was stored in user.db successfully with user_id ==", user.get_user_id())
+        print(user.get_electricity(), user.get_num_household(), "was stored in user.db successfully with user_id ==", user.get_user_id())
 
         db.close()
 
