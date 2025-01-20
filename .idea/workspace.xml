@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d055d725-f54d-4111-bb5e-28b0fafcff2d" name="Changes" comment="abc">
-      <change afterPath="$PROJECT_DIR$/user.db.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user.db.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user.db.dir" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/carbon_calculator.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/createUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/createUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/includes/_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/_navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,43 +54,25 @@
     "Python.app.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/felix/Documents/GitHub/Assignment-WebApp",
+    "last_opened_file_path": "C:/Users/felix/Documents/GitHub/Assignment-WebApp/templates",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\felix\Documents\GitHub\Assignment-WebApp\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\felix\Documents\GitHub\Assignment-WebApp\templates\includes" />
       <recent name="C:\Users\felix\Documents\GitHub\Assignment-WebApp" />
       <recent name="G:\Document\Github\Assignment-WebApp\templates" />
       <recent name="G:\Document\Github\Assignment-WebApp\Prac" />
       <recent name="C:\Users\felix\Documents\GitHub\AppDev\SimpleWebApp\templates\includes" />
-      <recent name="C:\Users\felix\Documents\GitHub\AppDev\SimpleWebApp\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.__init__">
-    <configuration name="CarbonForm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SimpleWebApp" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CarbonForm.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SimpleWebApp" />
       <option name="ENV_FILES" value="" />
@@ -124,7 +98,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.__init__" />
-        <item itemvalue="Python.CarbonForm" />
       </list>
     </recent_temporary>
   </component>
@@ -304,7 +277,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736930891676</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="abc">
+      <option name="closed" value="true" />
+      <created>1737334797508</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1737334797508</updated>
+    </task>
+    <task id="LOCAL-00022" summary="abc">
+      <option name="closed" value="true" />
+      <created>1737335250481</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1737335250481</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
