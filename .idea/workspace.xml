@@ -8,14 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d055d725-f54d-4111-bb5e-28b0fafcff2d" name="Changes" comment="abc">
-      <change afterPath="$PROJECT_DIR$/Forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/carbon_cal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/carbon_cal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/carbon_cal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/_navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -5,7 +5,6 @@
 {% block content %}
 {% from "includes/_formHelper.html" import render_field %}
 
-
 <h1 class="display-4">Carbon Calculator</h1>
   <p>Use this calculator to find out what is your carbon footprint!</p>
 
@@ -15,7 +14,7 @@
         <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#food">Food</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
@@ -43,7 +42,16 @@
         </form>
 
     </div>
-    <div class="tab-pane container fade" id="menu1">...</div>
+    <div class="tab-pane container fade" id="food">
+
+        <form method="POST" action="">
+          <div class="form-group">
+            {{ render_field(form.food, class="form-control") }}
+          </div>
+            <input type="submit" value="Next" class="btn btn-primary"/>
+        </form>
+
+    </div>
     <div class="tab-pane container fade" id="menu2">...</div>
 </div>
 
