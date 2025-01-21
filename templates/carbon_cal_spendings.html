@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Green App{% endblock %}
+
+{% block content %}
+{% from "includes/_formHelper.html" import render_field %}
+
+<div class="d-flex flex-column">
+
+    <h2 class="align-self-center"> Spendings </h2>
+<p class="m-1 align-self-center"> Goods and services we spend on, use electricity and water that indirectly contribute to our emissions. </p>
+<p class="align-self-center"> What is your average spending on the following in a month? </p>
+</div>
+
+<div>
+
+    <div class="container" id="spendings">
+
+        <form method="POST" action="">
+          <div class="form-group">
+            {{ render_field(form.cloth_foot, class="form-control") }}
+          </div>
+        <div class="form-group">
+            {{ render_field(form.recreate_act, class="form-control") }}
+          </div>
+            <div class="form-group">
+            {{ render_field(form.furn_house_ep_m, class="form-control") }}
+          </div>
+            <div class="form-group">
+            {{ render_field(form.health, class="form-control") }}
+          </div>
+            <div class="form-group">
+            {{ render_field(form.com_service, class="form-control") }}
+          </div>
+            <div class="form-group">
+            {{ render_field(form.edu_service, class="form-control") }}
+          </div>
+            <div class="form-group">
+            {{ render_field(form.others, class="form-control") }}
+          </div>
+            <a class="btn btn-primary" href="carbon_cal_food.html" role="button">Previous</a>
+            <a class="btn btn-primary" href="#" role="button">Next</a>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

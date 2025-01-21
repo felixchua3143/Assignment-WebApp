@@ -5,25 +5,24 @@
 {% block content %}
 {% from "includes/_formHelper.html" import render_field %}
 
-<h1 class="display-4">Carbon Calculator</h1>
-  <p>Use this calculator to find out what is your carbon footprint!</p>
+<div class="pb-4 d-flex flex-column">
 
-<!-- Nav tabs -->
-<ul class="nav nav-tabs">
-    <li class="nav-item">
-        <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#food">Food</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
-    </li>
-</ul>
+    <h1 class="display-4 align-self-center">What is my Carbon Footprint?</h1>
+    <p class="align-self-center">Use this calculator to find out what is your carbon footprint!</p>
+
+</div>
+
+
+<div class="d-flex flex-column">
+
+    <h2 class="align-self-center"> Utility Consumption </h2>
+<p class="align-self-center"> Electricity, water, and gas usage generate carbon emissions. </p>
+
+</div>
 
 <!-- Tab panes -->
-<div class="tab-content">
-    <div class="tab-pane container active" id="home">
+<div>
+    <div class="container" id="home">
 
         <form method="POST" action="">
           <div class="form-group">
@@ -38,21 +37,10 @@
             <div class="form-group">
             {{ render_field(form.num_household, class="form-control") }}
           </div>
-            <input type="submit" value="Next" class="btn btn-primary"/>
+            <a class="btn btn-primary" href="carbon_cal_food.html" role="button">Next</a>
         </form>
 
     </div>
-    <div class="tab-pane container fade" id="food">
-
-        <form method="POST" action="">
-          <div class="form-group">
-            {{ render_field(form.food, class="form-control") }}
-          </div>
-            <input type="submit" value="Next" class="btn btn-primary"/>
-        </form>
-
-    </div>
-    <div class="tab-pane container fade" id="menu2">...</div>
 </div>
 
 {% endblock %}
