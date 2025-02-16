@@ -23,6 +23,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="carbon_cal.html">Carbon Calculator</a>
                 </li>
+                <li>
+
+                    {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('profile') }}">Profile</a>
+                        <a href="{{ url_for('logout') }}">Log Out</a>
+                    {% else %}
+                        <a href="{{ url_for('signup') }}">Sign Up</a>
+                        <a href="{{ url_for('login') }}">Log In</a>
+                    {% endif %}
+
+                </li>
             </ul>
         </div>
     </div>

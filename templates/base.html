@@ -32,14 +32,19 @@
         {% include 'includes/__navbar.html' %}
     {% endblock %}
 
-    <div class="navbar">
-        <div>Website Name</div>
-
-    </div>
-
     <div class="container-fluid">
         {% block content %}
         {% endblock %}
+    </div>
+
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
     </div>
 
     {% block scripts %}

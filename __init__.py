@@ -3,15 +3,18 @@ import carbon_cal
 import os
 import shelve
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, Blueprint, render_template, redirect, url_for, request, flash
 from flask_wtf import FlaskForm
 from werkzeug.utils import secure_filename
 from wtforms import StringField, IntegerField, FileField, FloatField, validators
-from flask_login import LoginManager
-from views import views
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from models import User
 
 from Forms import CarbonCalForm
+
+views = Blueprint('views', __name__)
+
+DATABASE_FILE = "database.db"
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
@@ -43,6 +46,7 @@ login_manager.login_view = 'views.login'
 
 DATABASE_FILE = "database.db"
 
+
 @login_manager.user_loader
 def load_user(user_id):
     try:
@@ -58,7 +62,87 @@ def load_user(user_id):
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return redirect(url_for('signup'))
+
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        with shelve.open(DATABASE_FILE) as db:
+            if username in db:
+                flash("Username already exists!", "danger")
+            else:
+                db[username] = {'username': username, 'password': password}
+                flash("Account created successfully!", "success")
+                return redirect(url_for('views.login'))
+
+    return render_template('signup.html', title="Sign Up")
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        with shelve.open(DATABASE_FILE) as db:
+            user_data = db.get(username)
+            if user_data and user_data['password'] == password:
+                user = User(id=username, username=user_data['username'], password=user_data['password'])
+                login_user(user)
+                flash("Logged in successfully!", "success")
+                return redirect(url_for('views.profile'))
+            else:
+                flash("Invalid credentials!", "danger")
+
+    return render_template('login.html', title="Log In")
+
+
+@app.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html', title="Profile", username=current_user.username)
+
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash("Logged out successfully!", "success")
+    return redirect(url_for('login'))
+
+
+@app.route('/delete', methods=['POST'])
+@login_required
+def delete_account():
+    with shelve.open(DATABASE_FILE) as db:
+        del db[current_user.id]
+    logout_user()
+    flash("Account deleted successfully!", "success")
+    return redirect(url_for('signup'))
+
+
+@app.route('/update', methods=['GET', 'POST'])
+@login_required
+def update_account():
+    if request.method == 'POST':
+        new_username = request.form['username']
+        new_password = request.form['password']
+
+        with shelve.open(DATABASE_FILE) as db:
+            if new_username in db and new_username != current_user.id:
+                flash("Username already exists!", "danger")
+            else:
+                del db[current_user.id]
+                db[new_username] = {'username': new_username, 'password': new_password}
+                logout_user()
+                flash("Account updated. Please log in again.", "success")
+                return redirect(url_for('login'))
+
+    return render_template('profile.html', title="Update Account")
 
 
 @app.route('/create', methods=['GET', 'POST'])
@@ -215,7 +299,6 @@ def create_cal_spendings():
     if request.method == "POST" and create_cal_form.validate():
         return redirect(url_for("create_cal"))
     return render_template('carbon_cal_spendings.html', form=create_cal_form)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
