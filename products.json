@@ -1,0 +1,28 @@
+{
+    "products": {
+        "1": {
+            "id": 1,
+            "name": "Fridge 2",
+            "description": "Keeps your food cold",
+            "image": "Screenshot_2024-12-09_210456.png",
+            "stock": 7,
+            "price": 370.5
+        },
+        "2": {
+            "id": 2,
+            "name": "Washing Machine 1",
+            "description": "Does your laundry",
+            "image": "Screenshot_2024-12-09_211214.png",
+            "stock": 10,
+            "price": 400.0
+        },
+        "3": {
+            "id": 3,
+            "name": "Fridge 2",
+            "description": "Keeps your food cold",
+            "image": "Screenshot_2024-12-09_205757.png",
+            "stock": 15,
+            "price": 600.0
+        }
+    }
+}

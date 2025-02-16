@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Add Product{% endblock %}
+{% block content %}
+  <h1>Add New Product</h1>
+  <form method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.product_name.label }}
+      {{ form.product_name(class="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ form.product_description.label }}
+      {{ form.product_description(class="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ form.product_img.label }}
+      {{ form.product_img(class="form-control-file") }}
+    </div>
+    <div class="form-group">
+      {{ form.stock_amt.label }}
+      {{ form.stock_amt(class="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ form.product_price.label }}
+      {{ form.product_price(class="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+    <a href="{{ url_for('home') }}" class="btn btn-secondary">Go Back</a>
+  </form>
+{% endblock %}
