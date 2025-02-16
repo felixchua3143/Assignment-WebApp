@@ -21,9 +21,9 @@
                     <a class="nav-link" href="{{ url_for('purchase_page') }}">Purchase Energy Saving Products!</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="carbon_cal.html">Carbon Calculator</a>
+                    <a class="nav-link" href="{{url_for('')}}">Carbon Calculator</a>
                 </li>
-                <li class="nav-item d-flex justify-self-end">
+                <li class="nav-item d-flex">
                     {% if current_user.is_authenticated %}
                         <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
                         <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>

@@ -5,7 +5,8 @@ from wtforms.validators import ValidationError
 def sel_one_valid(form, field):
     if field.data == "sel_o":
         raise ValidationError("Please pick an option")
-
+    else:
+        pass
 
 class CarbonCalForm(Form):
     electricity = SelectField("Electricity", [validators.DataRequired(), sel_one_valid],

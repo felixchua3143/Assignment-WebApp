@@ -264,7 +264,7 @@ def delete_all_stock(product_id):
 @app.route('/carbon_cal.html', methods=["GET", "POST"])
 def create_cal():
     create_cal_form = CarbonCalForm(request.form)
-    if request.method == "POST" and create_cal_form.validate():
+    if request.method == "POST":
         carbon_dict = {}
         db = shelve.open('carbon.db', 'c')
 
@@ -273,10 +273,10 @@ def create_cal():
         except:
             print("Error in retrieving data from carbon.db.")
 
-        carbon = carbon_cal.Carbon_Cal(create_cal_form.username.data, create_cal_form.electricity.data,
+        carbon = carbon_cal.Carbon_Cal(create_cal_form.get_username().data, create_cal_form.electricity.data,
                                        create_cal_form.gas.data,
                                        create_cal_form.water.data, create_cal_form.num_household.data)
-        carbon_dict[carbon.id] = carbon
+        carbon_dict[carbon.get_id()] = carbon
         db["Carbon"] = carbon_dict
 
         db.close()
