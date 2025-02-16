@@ -1,4 +1,3 @@
-import User
 import carbon_cal
 import os
 import shelve
@@ -8,8 +7,7 @@ from flask_wtf import FlaskForm
 from werkzeug.utils import secure_filename
 from wtforms import StringField, IntegerField, FileField, FloatField, validators
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from models import User
-
+from User import User
 from Forms import CarbonCalForm
 
 views = Blueprint('views', __name__)
@@ -42,9 +40,9 @@ def allowed_file(filename):
 
 
 login_manager = LoginManager(app)
-login_manager.login_view = 'views.login'
+login_manager.login_view = 'login'
 
-DATABASE_FILE = "database.db"
+DATABASE_FILE = "user_database.db"
 
 
 @login_manager.user_loader
@@ -62,7 +60,7 @@ def load_user(user_id):
 
 @app.route('/')
 def home():
-    return redirect(url_for('signup'))
+    return render_template('home.html')
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -77,7 +75,7 @@ def signup():
             else:
                 db[username] = {'username': username, 'password': password}
                 flash("Account created successfully!", "success")
-                return redirect(url_for('views.login'))
+                return redirect(url_for('login'))
 
     return render_template('signup.html', title="Sign Up")
 
@@ -94,7 +92,7 @@ def login():
                 user = User(id=username, username=user_data['username'], password=user_data['password'])
                 login_user(user)
                 flash("Logged in successfully!", "success")
-                return redirect(url_for('views.profile'))
+                return redirect(url_for('profile'))
             else:
                 flash("Invalid credentials!", "danger")
 
@@ -275,9 +273,10 @@ def create_cal():
         except:
             print("Error in retrieving data from carbon.db.")
 
-        carbon = carbon_cal.Carbon_Cal(create_cal_form.electricity.data, create_cal_form.gas.data,
+        carbon = carbon_cal.Carbon_Cal(create_cal_form.username.data, create_cal_form.electricity.data,
+                                       create_cal_form.gas.data,
                                        create_cal_form.water.data, create_cal_form.num_household.data)
-        carbon_dict[carbon.get_user_id()] = carbon
+        carbon_dict[carbon.id] = carbon
         db["Carbon"] = carbon_dict
 
         db.close()
@@ -299,6 +298,7 @@ def create_cal_spendings():
     if request.method == "POST" and create_cal_form.validate():
         return redirect(url_for("create_cal"))
     return render_template('carbon_cal_spendings.html', form=create_cal_form)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

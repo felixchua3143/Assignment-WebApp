@@ -4,17 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6be49ad0-223a-4e63-96ed-c15efd7f88e5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/SimpleWebApp2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SimpleWebApp2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6be49ad0-223a-4e63-96ed-c15efd7f88e5" name="Changes" comment="abc">
+      <change afterPath="$PROJECT_DIR$/static/uploads/thumb-1920-594600.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_database.db.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_database.db.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_database.db.dir" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/User.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database.db.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carbon_cal.py" beforeDir="false" afterPath="$PROJECT_DIR$/carbon_cal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products_shelve.db.bak" beforeDir="false" afterPath="$PROJECT_DIR$/products_shelve.db.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products_shelve.db.dat" beforeDir="false" afterPath="$PROJECT_DIR$/products_shelve.db.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products_shelve.db.dir" beforeDir="false" afterPath="$PROJECT_DIR$/products_shelve.db.dir" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/carbon_cal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/carbon_cal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/carbon_cal_food.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/carbon_cal_food.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/carbon_cal_spendings.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/carbon_cal_spendings.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/includes/__navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/__navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,12 +49,16 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2rTj38rwmWJbx0aJ05LOmqshDDw" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultHtmlFileTemplate": "HTML File",
     "Python.__init__.executor": "Run",
     "Python.export_shelve_to_json.executor": "Run",
@@ -132,6 +146,20 @@
       <option name="presentableId" value="Default" />
       <updated>1736589757153</updated>
     </task>
+    <task id="LOCAL-00001" summary="abc">
+      <option name="closed" value="true" />
+      <created>1739704100722</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739704100722</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="abc" />
+    <option name="LAST_COMMIT_MESSAGE" value="abc" />
   </component>
 </project>
