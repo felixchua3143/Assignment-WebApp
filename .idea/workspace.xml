@@ -1,90 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="ANALYZE_INJECTED_CODE" value="false" />
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d055d725-f54d-4111-bb5e-28b0fafcff2d" name="Changes" comment="abc">
-      <change beforePath="$PROJECT_DIR$/.idea/SimpleWebApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SimpleWebApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carbon_cal.py" beforeDir="false" afterPath="$PROJECT_DIR$/carbon_cal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/carbon_cal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/carbon_cal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/carbon_cal_food.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/carbon_cal_food.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/carbon_cal_spendings.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/carbon_cal_spendings.html" afterDir="false" />
-    </list>
+    <list default="true" id="6be49ad0-223a-4e63-96ed-c15efd7f88e5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="directory" />
-    </option>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/templates/base.html" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
+  &quot;associatedIndex&quot;: 8
 }</component>
-  <component name="ProjectId" id="2nVfJ4bEEZcXnkM9ba5Mf23blNX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2rTj38rwmWJbx0aJ05LOmqshDDw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.CarbonForm.executor&quot;: &quot;Run&quot;,
-    &quot;Python.User.executor&quot;: &quot;Run&quot;,
     &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.export_shelve_to_json.executor&quot;: &quot;Run&quot;,
+    &quot;Python.import_json_to_shelve.executor&quot;: &quot;Run&quot;,
+    &quot;Python.initialize_shelve.executor&quot;: &quot;Run&quot;,
+    &quot;Python.manage_db.executor&quot;: &quot;Run&quot;,
+    &quot;Python.manage_db_direct.executor&quot;: &quot;Run&quot;,
+    &quot;Python.products_shelve.db.dat.executor&quot;: &quot;Run&quot;,
+    &quot;Python.products_shelves.db.dat.executor&quot;: &quot;Run&quot;,
+    &quot;Python.read_json.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/felix/Documents/GitHub/Assignment-WebApp/templates&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/A.Hazwan/Documents/App Development/WEEK1/SimpleWebApp2&quot;
   }
 }</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\felix\Documents\GitHub\Assignment-WebApp\templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\felix\Documents\GitHub\Assignment-WebApp" />
-      <recent name="C:\Users\felix\Documents\GitHub\Assignment-WebApp\templates" />
-      <recent name="C:\Users\felix\Documents\GitHub\Assignment-WebApp\templates\includes" />
-      <recent name="G:\Document\Github\Assignment-WebApp\templates" />
-      <recent name="G:\Document\Github\Assignment-WebApp\Prac" />
+      <recent name="C:\Users\A.Hazwan\Documents\App Development\WEEK1\SimpleWebApp2\templates" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.__init__">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SimpleWebApp" />
+      <module name="SimpleWebApp2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -105,6 +73,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="products_shelve.db.dat" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="SimpleWebApp2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/products_shelve.db.dat" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.__init__" />
@@ -114,252 +104,19 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+        <option value="bundled-python-sdk-8336bb23522e-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.19072.16" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d055d725-f54d-4111-bb5e-28b0fafcff2d" name="Changes" comment="" />
-      <created>1729063088588</created>
+      <changelist id="6be49ad0-223a-4e63-96ed-c15efd7f88e5" name="Changes" comment="" />
+      <created>1736589757153</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1729063088588</updated>
+      <updated>1736589757153</updated>
     </task>
-    <task id="LOCAL-00001" summary="abc">
-      <option name="closed" value="true" />
-      <created>1732084001373</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1732084001373</updated>
-    </task>
-    <task id="LOCAL-00002" summary="abc">
-      <option name="closed" value="true" />
-      <created>1732592206262</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1732592206262</updated>
-    </task>
-    <task id="LOCAL-00003" summary="abc">
-      <option name="closed" value="true" />
-      <created>1732592236829</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1732592236829</updated>
-    </task>
-    <task id="LOCAL-00004" summary="abc">
-      <option name="closed" value="true" />
-      <created>1732592725296</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1732592725296</updated>
-    </task>
-    <task id="LOCAL-00005" summary="abc">
-      <option name="closed" value="true" />
-      <created>1732594761080</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1732594761080</updated>
-    </task>
-    <task id="LOCAL-00006" summary="abc">
-      <option name="closed" value="true" />
-      <created>1733199650775</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1733199650775</updated>
-    </task>
-    <task id="LOCAL-00007" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736788324440</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1736788324440</updated>
-    </task>
-    <task id="LOCAL-00008" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736788771436</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1736788771436</updated>
-    </task>
-    <task id="LOCAL-00009" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736788815175</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1736788815175</updated>
-    </task>
-    <task id="LOCAL-00010" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736873826641</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1736873826641</updated>
-    </task>
-    <task id="LOCAL-00011" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736873873681</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1736873873681</updated>
-    </task>
-    <task id="LOCAL-00012" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736873895987</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1736873895987</updated>
-    </task>
-    <task id="LOCAL-00013" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736914101354</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1736914101354</updated>
-    </task>
-    <task id="LOCAL-00014" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736915555398</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1736915555398</updated>
-    </task>
-    <task id="LOCAL-00015" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736915700378</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1736915700378</updated>
-    </task>
-    <task id="LOCAL-00016" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736929901430</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1736929901433</updated>
-    </task>
-    <task id="LOCAL-00017" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736929928787</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1736929928787</updated>
-    </task>
-    <task id="LOCAL-00018" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736929934182</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1736929934182</updated>
-    </task>
-    <task id="LOCAL-00019" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736930870950</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1736930870952</updated>
-    </task>
-    <task id="LOCAL-00020" summary="abc">
-      <option name="closed" value="true" />
-      <created>1736930891676</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1736930891676</updated>
-    </task>
-    <task id="LOCAL-00021" summary="abc">
-      <option name="closed" value="true" />
-      <created>1737334797508</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1737334797508</updated>
-    </task>
-    <task id="LOCAL-00022" summary="abc">
-      <option name="closed" value="true" />
-      <created>1737335250481</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1737335250481</updated>
-    </task>
-    <task id="LOCAL-00023" summary="abc">
-      <option name="closed" value="true" />
-      <created>1737337299735</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1737337299735</updated>
-    </task>
-    <task id="LOCAL-00024" summary="abc">
-      <option name="closed" value="true" />
-      <created>1737350187616</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1737350187616</updated>
-    </task>
-    <task id="LOCAL-00025" summary="abc">
-      <option name="closed" value="true" />
-      <created>1737363986886</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1737363986886</updated>
-    </task>
-    <task id="LOCAL-00026" summary="abc">
-      <option name="closed" value="true" />
-      <created>1737428353425</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1737428353426</updated>
-    </task>
-    <task id="LOCAL-00027" summary="abc">
-      <option name="closed" value="true" />
-      <created>1737435142208</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1737435142208</updated>
-    </task>
-    <option name="localTasksCounter" value="28" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="abc" />
-    <option name="LAST_COMMIT_MESSAGE" value="abc" />
   </component>
 </project>

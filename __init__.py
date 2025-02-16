@@ -1,9 +1,17 @@
+import User
+import carbon_cal
+import os
+import shelve
+
 from flask import Flask, render_template, request, redirect, url_for
-from Forms import CarbonCalForm
-import shelve, User, carbon_cal, os
-from werkzeug.utils import secure_filename
 from flask_wtf import FlaskForm
+from werkzeug.utils import secure_filename
 from wtforms import StringField, IntegerField, FileField, FloatField, validators
+from flask_login import LoginManager
+from views import views
+from models import User
+
+from Forms import CarbonCalForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
@@ -17,6 +25,7 @@ with shelve.open('products_shelve.db', writeback=True) as products_db:
     if 'products' not in products_db:
         products_db['products'] = {}
 
+
 class CreateProductForm(FlaskForm):
     product_name = StringField('Product Name', [validators.Length(min=1, max=150), validators.DataRequired()])
     product_description = StringField('Description', [validators.Length(min=1, max=150), validators.DataRequired()])
@@ -24,12 +33,33 @@ class CreateProductForm(FlaskForm):
     stock_amt = IntegerField('Amount of Stock', [validators.DataRequired()])
     product_price = FloatField('Price', [validators.DataRequired()])
 
+
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
+
+login_manager = LoginManager(app)
+login_manager.login_view = 'views.login'
+
+DATABASE_FILE = "database.db"
+
+@login_manager.user_loader
+def load_user(user_id):
+    try:
+        with shelve.open(DATABASE_FILE) as db:
+            user_data = db.get(user_id)
+            if user_data:
+                return User(user_id, user_data['username'], user_data['password'])
+    except (EOFError, KeyError, TypeError):
+
+        pass
+    return None
+
+
 @app.route('/')
-def index():
-    return render_template('index.html')
+def home():
+    return render_template('home.html')
+
 
 @app.route('/create', methods=['GET', 'POST'])
 def create_product():
@@ -57,8 +87,10 @@ def create_product():
             return redirect(url_for('list_products'))
     return render_template('create_product.html', form=form)
 
+
 class EditDescriptionForm(FlaskForm):
     product_description = StringField('Description', [validators.Length(min=1, max=150), validators.DataRequired()])
+
 
 @app.route('/products', methods=['GET', 'POST'])
 def list_products():
@@ -76,6 +108,7 @@ def list_products():
         products = [product for product in products_db.get('products', {}).values() if product['stock'] > 0]
     return render_template('product_list.html', products=products, form=form)
 
+
 @app.route('/product/<int:product_id>')
 def product(product_id):
     try:
@@ -85,6 +118,7 @@ def product(product_id):
     except EOFError:
         return "Stock is empty"
 
+
 @app.route('/purchase')
 def purchase_page():
     try:
@@ -93,6 +127,7 @@ def purchase_page():
         return render_template('purchase_page.html', products=products)
     except EOFError:
         return "Stock is empty"
+
 
 @app.route('/purchase/<int:product_id>', methods=['GET', 'POST'])
 def purchase_product(product_id):
@@ -114,6 +149,7 @@ def purchase_product(product_id):
     except EOFError:
         return "Stock is empty"
 
+
 @app.route('/delete_stock/<int:product_id>', methods=['POST'])
 def delete_stock(product_id):
     try:
@@ -131,6 +167,7 @@ def delete_stock(product_id):
                 return redirect(url_for('list_products', error=error))
     except EOFError:
         return "Error: Shelve database is empty or corrupted."
+
 
 @app.route('/delete_all_stock/<int:product_id>', methods=['POST'])
 def delete_all_stock(product_id):
