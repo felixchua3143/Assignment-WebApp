@@ -2,11 +2,10 @@ import carbon_cal
 import os
 import shelve
 
-from flask import Flask, Blueprint, render_template, redirect, url_for, request, flash, session
+from flask import Flask, Blueprint, render_template, redirect, url_for, request, session
 from flask_wtf import FlaskForm
 from werkzeug.utils import secure_filename
 from wtforms import StringField, IntegerField, FileField, FloatField, validators
-from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from User import User
 from Forms import CarbonCalForm
 
@@ -42,25 +41,6 @@ class CreateProductForm(FlaskForm):
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
-
-
-login_manager = LoginManager(app)
-login_manager.login_view = 'login'
-
-DATABASE_FILE = "user_database.db"
-
-
-@login_manager.user_loader
-def load_user(user_id):
-    try:
-        with shelve.open(DATABASE_FILE) as db:
-            user_data = db.get(user_id)
-            if user_data:
-                return User(user_id, user_data['username'], user_data['password'])
-    except (EOFError, KeyError, TypeError):
-
-        pass
-    return None
 
 @app.route('/')
 def index():
