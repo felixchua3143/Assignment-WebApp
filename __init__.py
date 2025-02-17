@@ -2,7 +2,7 @@ import carbon_cal
 import os
 import shelve
 
-from flask import Flask, Blueprint, render_template, redirect, url_for, request, flash
+from flask import Flask, Blueprint, render_template, redirect, url_for, request, flash, session
 from flask_wtf import FlaskForm
 from werkzeug.utils import secure_filename
 from wtforms import StringField, IntegerField, FileField, FloatField, validators
@@ -18,6 +18,11 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
+
+users = [
+    {'email': 'admin@gmail.com', 'password': 'admin', 'is_admin': True},
+    {'email': 'user@example.com', 'password': 'user123', 'is_admin': False}
+]
 
 if not os.path.exists(app.config['UPLOAD_FOLDER']):
     os.makedirs(app.config['UPLOAD_FOLDER'])
@@ -57,91 +62,80 @@ def load_user(user_id):
         pass
     return None
 
-
 @app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/home')
 def home():
-    return render_template('home.html')
+    if 'user' in session and not session['user']['is_admin']:
+        return render_template('home.html')
+    return redirect(url_for('index'))  # Admins cannot access home page
 
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        username = request.form['username']
+        email = request.form['email']
         password = request.form['password']
-
-        with shelve.open(DATABASE_FILE) as db:
-            if username in db:
-                flash("Username already exists!", "danger")
-            else:
-                db[username] = {'username': username, 'password': password}
-                flash("Account created successfully!", "success")
-                return redirect(url_for('login'))
-
-    return render_template('signup.html', title="Sign Up")
+        # Add new user (In real apps, you should store in a database)
+        users.append({'email': email, 'password': password, 'is_admin': False})
+        return redirect(url_for('index'))
+    return render_template('signup.html')
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['POST'])
 def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+    email = request.form['email']
+    password = request.form['password']
 
-        with shelve.open(DATABASE_FILE) as db:
-            user_data = db.get(username)
-            if user_data and user_data['password'] == password:
-                user = User(id=username, username=user_data['username'], password=user_data['password'])
-                login_user(user)
-                flash("Logged in successfully!", "success")
-                return redirect(url_for('profile'))
-            else:
-                flash("Invalid credentials!", "danger")
+    user = next((u for u in users if u['email'] == email and u['password'] == password), None)
 
-    return render_template('login.html', title="Log In")
-
+    if user:
+        session['user'] = user
+        if user['is_admin']:
+            return redirect(url_for('database'))  # Admin (employee) goes to database page
+        else:
+            return redirect(url_for('home'))  # Regular user goes to home page
+    else:
+        return redirect(url_for('index'))
 
 @app.route('/profile')
-@login_required
 def profile():
-    return render_template('profile.html', title="Profile", username=current_user.username)
+    if 'user' in session and not session['user']['is_admin']:
+        return render_template('profile.html', user=session['user'])
+    return redirect(url_for('index'))  # Admins cannot access profile pag
+
 
 
 @app.route('/logout')
-@login_required
 def logout():
-    logout_user()
-    flash("Logged out successfully!", "success")
-    return redirect(url_for('login'))
+    session.pop('user', None)  # Clear the user session
+    return redirect(url_for('index'))  # Redirect to login page
 
 
-@app.route('/delete', methods=['POST'])
-@login_required
+@app.route('/delete_account', methods=['POST'])
 def delete_account():
-    with shelve.open(DATABASE_FILE) as db:
-        del db[current_user.id]
-    logout_user()
-    flash("Account deleted successfully!", "success")
-    return redirect(url_for('signup'))
+    if 'user' in session:
+        users.remove(session['user'])
+        session.pop('user', None)
+        return redirect(url_for('index'))
+    return redirect(url_for('index'))
 
 
-@app.route('/update', methods=['GET', 'POST'])
-@login_required
-def update_account():
-    if request.method == 'POST':
-        new_username = request.form['username']
-        new_password = request.form['password']
+@app.route('/update_profile', methods=['POST'])
+def update_profile():
+    if 'user' in session and not session['user']['is_admin']:
+        session['user']['email'] = request.form['email']
+        session['user']['password'] = request.form['password']
+        return redirect(url_for('profile'))
+    return redirect(url_for('index'))  # Admins cannot update profile
 
-        with shelve.open(DATABASE_FILE) as db:
-            if new_username in db and new_username != current_user.id:
-                flash("Username already exists!", "danger")
-            else:
-                del db[current_user.id]
-                db[new_username] = {'username': new_username, 'password': new_password}
-                logout_user()
-                flash("Account updated. Please log in again.", "success")
-                return redirect(url_for('login'))
-
-    return render_template('profile.html', title="Update Account")
-
+@app.route('/database')
+def database():
+    if 'user' in session and session['user']['is_admin']:
+        return render_template('database.html', users=users)
+    return redirect(url_for('index'))  # Non-admins cannot access the database page
 
 @app.route('/create', methods=['GET', 'POST'])
 def create_product():
