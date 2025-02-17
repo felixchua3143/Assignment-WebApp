@@ -2,19 +2,16 @@ import carbon_cal
 import os
 import shelve
 
-from flask import Flask, Blueprint, render_template, redirect, url_for, request, session, flash
+from flask import Flask, render_template, redirect, url_for, request, session
 from flask_wtf import FlaskForm
 from werkzeug.utils import secure_filename
 from wtforms import StringField, IntegerField, FileField, FloatField, validators
 from Forms import CarbonCalForm
 
-DATABASE_FILE = "database.db"
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
-DB_PATH = 'user_data.db'
 users = [
     {'email': 'admin@gmail.com', 'password': 'admin', 'is_admin': True},
     {'email': 'user@example.com', 'password': 'user123', 'is_admin': False}
@@ -40,89 +37,74 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 
-def get_db():
-    return shelve.open(DB_PATH, writeback=True)
-
-
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/login.html', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-
-        with get_db() as db:
-            # Check if it's the admin login
-            if username == 'admin@gmail.com' and password == 'admin':
-                session['user'] = username
-                return redirect(url_for('database'))  # Redirect to database page for admin
-
-            # Check for regular user login
-            elif username in db and db[username]['password'] == password:
-                session['user'] = username
-                return redirect(url_for('profile'))
-
-            else:
-                flash('Invalid credentials')
-        return redirect(url_for('login'))
-    return render_template('login.html')
-
-
-@app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        username = request.form['username']
+        email = request.form['email']
         password = request.form['password']
-
-        if len(password) < 8:
-            flash('Password must be at least 8 characters long')
-            return redirect(url_for('signup'))
-
-        with get_db() as db:
-            if username in db:
-                flash('Username already exists')
-                return redirect(url_for('signup'))
-            db[username] = {'password': password}
-        return redirect(url_for('login'))
+        # Add new user (In real apps, you should store in a database)
+        users.append({'email': email, 'password': password, 'is_admin': False})
+        return redirect(url_for('index'))
     return render_template('signup.html')
 
 
-@app.route('/profile', methods=['GET', 'POST'])
+@app.route('/login', methods=['POST'])
+def login():
+    email = request.form['email']
+    password = request.form['password']
+
+    user = next((u for u in users if u['email'] == email and u['password'] == password), None)
+
+    if user:
+        session['user'] = user
+        if user['is_admin']:
+            return redirect(url_for('database'))
+        else:
+            return redirect(url_for('home'))
+    else:
+        return redirect(url_for('index'))
+
+
+@app.route('/home')
+def home():
+    if 'user' in session and not session['user']['is_admin']:
+        return render_template('home.html')
+    return redirect(url_for('index'))
+
+
+@app.route('/profile')
 def profile():
-    if 'user' not in session:
-        return redirect(url_for('login'))
+    if 'user' in session and not session['user']['is_admin']:
+        return render_template('profile.html', user=session['user'])
+    return redirect(url_for('index'))
 
-    username = session['user']
 
-    if request.method == 'POST':
-        new_password = request.form['new_password']
-        if len(new_password) < 8:
-            flash('Password must be at least 8 characters long')
-            return redirect(url_for('profile'))
-
-        with get_db() as db:
-            db[username]['password'] = new_password
-        flash('Password updated successfully')
-
-    return render_template('profile.html', username=username)
+@app.route('/update_profile', methods=['POST'])
+def update_profile():
+    if 'user' in session and not session['user']['is_admin']:
+        session['user']['email'] = request.form['email']
+        session['user']['password'] = request.form['password']
+        return redirect(url_for('profile'))
+    return redirect(url_for('index'))
 
 
 @app.route('/delete_account', methods=['POST'])
 def delete_account():
-    if 'user' not in session:
-        return redirect(url_for('login'))
+    if 'user' in session:
+        users.remove(session['user'])
+        session.pop('user', None)
+        return redirect(url_for('index'))
+    return redirect(url_for('index'))
 
-    username = session['user']
 
-    with get_db() as db:
-        del db[username]
-
-    session.pop('user', None)
-    flash('Account deleted successfully')
+@app.route('/database')
+def database():
+    if 'user' in session and session['user']['is_admin']:
+        return render_template('database.html', users=users)
     return redirect(url_for('index'))
 
 
@@ -130,46 +112,6 @@ def delete_account():
 def logout():
     session.pop('user', None)
     return redirect(url_for('index'))
-
-
-@app.route('/database')
-def database_page():
-    if 'user' not in session or session['user'] != 'admin@gmail.com':
-        return redirect(url_for('login'))
-
-    db = get_db()  # Open the shelf database
-    users = db.items()  # Get users from the opened database
-
-    return render_template('database.html', users=users)
-
-
-@app.route('/update_password/<username>', methods=['GET','POST'])
-def update_password(username):
-    if 'user' not in session or session['user'] != 'admin@gmail.com':
-        return redirect(url_for('login'))
-
-    new_password = request.form['new_password']
-    if len(new_password) < 8:
-        flash('Password must be at least 8 characters long')
-        return redirect(url_for('database_page'))
-
-    with get_db() as db:
-        db[username]['password'] = new_password
-
-    flash(f'Password for {username} updated successfully')
-    return redirect(url_for('database_page'))
-
-
-@app.route('/delete_user/<username>', methods=['GET','POST'])
-def delete_user(username):
-    if 'user' not in session or session['user'] != 'admin@gmail.com':
-        return redirect(url_for('login'))
-
-    with get_db() as db:
-        del db[username]
-
-    flash(f'User {username} deleted successfully')
-    return redirect(url_for('database_page'))
 
 
 @app.route('/create', methods=['GET', 'POST'])
@@ -328,6 +270,7 @@ def create_cal_spendings():
         return redirect(url_for("create_cal"))
     return render_template('carbon_cal_spendings.html', form=create_cal_form)
 
+
 @app.route('/feedback.html', methods=['GET', 'POST'])
 def feedback_form():
     if request.method == 'POST':
@@ -343,11 +286,13 @@ def feedback_form():
         return render_template('success.html', message="Feedback submitted successfully!")
     return render_template('feedback.html')
 
+
 @app.route('/retrieveFeedback')
 def retrieve_feedback():
     feedback_dict = get_shelve_data('feedback.db', 'Feedback')
     feedback_list = [{"id": key, **feedback_dict[key]} for key in feedback_dict]
     return render_template('retrieveFeedback.html', feedback_list=feedback_list)
+
 
 @app.route('/updateFeedback/<int:id>', methods=['GET', 'POST'])
 def update_feedback(id):
@@ -364,12 +309,14 @@ def update_feedback(id):
 
     return render_template('updateFeedback.html', feedback=feedback, id=id)
 
+
 @app.route('/deleteFeedback/<int:id>', methods=['POST'])
 def delete_feedback(id):
     feedback_dict = get_shelve_data('feedback.db', 'Feedback')
     feedback_dict.pop(id, None)
     save_shelve_data('feedback.db', 'Feedback', feedback_dict)
     return redirect(url_for('retrieve_feedback'))
+
 
 # Review CRUD
 @app.route('/review', methods=['GET', 'POST'])
@@ -389,24 +336,26 @@ def review_form():
         return render_template('success.html', message="Review submitted successfully!")
     return render_template('review.html')
 
+
 @app.route('/retrieveReview')
 def retrieve_review():
     review_dict = get_shelve_data('review.db', 'Review')
     if not review_dict:
         review_dict = {}
     review_list = [{"id": key, **review_dict[key]} for key in review_dict]
-    return render_template('retrieveReviews.html', review_list=review_list)
+    return render_template('retrieveReapp.html', review_list=review_list)
+
+
 def get_shelve_data(db_name, key):
     with shelve.open(db_name, 'c') as db:
         if key not in db:
             db[key] = {}
         return db[key]
 
+
 def save_shelve_data(db_name, key, data):
-    with shelve.open(db_name, 'c')as db:
+    with shelve.open(db_name, 'c') as db:
         db[key] = data
-
-
 
     @app.route('/updateReview/<int:id>', methods=['GET', 'POST'])
     def update_review(id):
@@ -433,6 +382,7 @@ def save_shelve_data(db_name, key, data):
         return redirect(url_for('retrieve_review'))
 
         # Support CRUD
+
     @app.route('/support', methods=['GET', 'POST'])
     def support_form():
         if request.method == 'POST':
@@ -476,7 +426,7 @@ def save_shelve_data(db_name, key, data):
         save_shelve_data('support.db', 'Support', support_dict)
         return redirect(url_for('retrieve_support'))
 
-    def get_shelve_data( db_name, key):
+    def get_shelve_data(db_name, key):
         db = shelve.open(db_name, 'c')
         if key not in db:
             db[key] = {}
@@ -488,7 +438,6 @@ def save_shelve_data(db_name, key, data):
         db = shelve.open(db_name, 'c')
         db[key] = data
         db.close()
-
 
 
 if __name__ == '__main__':
