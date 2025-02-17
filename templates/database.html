@@ -5,27 +5,19 @@
 {% endblock %}
 
     {% block content %}
-            <h2>Admin Database Page</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for user in users %}
-                        <tr>
-                            <td>{{ user.email }}</td>
-                            <td>{{ user.password }}</td>
-                            <td>
-                                <button>Update</button>
-                                <button>Delete</button>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+     <h2>User Database</h2>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+        </tr>
+        {% for username, user in users %}
+        <tr>
+            <td>{{ username }}</td>
+            <td>{{ user['password'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('logout') }}">Logout</a>
 
 {% endblock %}

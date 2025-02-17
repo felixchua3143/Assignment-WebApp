@@ -1,7 +1,4 @@
-from User import *
-
-
-class Carbon_Cal(User):
+class Carbon_Cal():
     def __init__(self, id, username, electricity, gas, water, num_household):
         super().__init__(id, username)
         self.electricity = electricity

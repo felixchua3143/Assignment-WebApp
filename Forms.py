@@ -63,3 +63,32 @@ class CarbonCalForm(Form):
                          choices=[("sel_o", "Select One"), ("o $0", "$0"), ("o < $120", "< $120"),
                                   ("o $120 - $500", "$120 - $500"),
                                   ("o > $500", "> $500")])
+
+class Feedback:
+    def __init__(self, name, email, feedback):
+        self.name = name
+        self.email = email
+        self.feedback = feedback
+
+    def to_dict(self):
+        return {"name": self.name, "email": self.email, "feedback": self.feedback}
+class Review:
+    def __init__(self, name, email, product_name, review, rating):
+        self.name = name
+        self.email = email
+        self.product_name = product_name
+        self.review = review
+        self.rating = rating
+
+    def to_dict(self):
+        return {"name": self.name, "email": self.email, "product_name": self.product_name, "review": self.review, "rating": self.rating}
+
+
+class Support:
+    def __init__(self, name, email, issue):
+        self.name = name
+        self.email = email
+        self.issue = issue
+
+    def to_dict(self):
+        return {"name": self.name, "email": self.email, "issue": self.issue}

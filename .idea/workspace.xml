@@ -5,9 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6be49ad0-223a-4e63-96ed-c15efd7f88e5" name="Changes" comment="abc">
-      <change afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/feedback.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/retrieveFeedback.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/retrieveReviews.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/retrieveSupport.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/review.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/support.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/updateFeedback.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/updateReview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/updateSupport.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carbon_cal.py" beforeDir="false" afterPath="$PROJECT_DIR$/carbon_cal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/database.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/database.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/__admin_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/__admin_navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/__navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/__navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +71,7 @@
     &quot;Python.read_json.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/Document/Github/Assignment-WebApp&quot;
+    &quot;last_opened_file_path&quot;: &quot;G:/Document/School Stuff/Year 1/Sem 2/App Dev/SimpleWebApp5&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -172,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739804887407</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="abc">
+      <option name="closed" value="true" />
+      <created>1739806011326</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739806011326</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
