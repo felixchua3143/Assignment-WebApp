@@ -5,16 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6be49ad0-223a-4e63-96ed-c15efd7f88e5" name="Changes" comment="abc">
-      <change afterPath="$PROJECT_DIR$/feedback.db.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedback.db.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feedback.db.dir" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/other_base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback.db.bak" beforeDir="false" afterPath="$PROJECT_DIR$/feedback.db.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback.db.dat" beforeDir="false" afterPath="$PROJECT_DIR$/feedback.db.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback.db.dir" beforeDir="false" afterPath="$PROJECT_DIR$/feedback.db.dir" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/__admin_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/feedback.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/_notifications.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/feedback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/retrieveFeedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/retrieveFeedback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/retrieveReviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/retrieveReviews.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/retrieveSupport.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/retrieveSupport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/review.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/support.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/support.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/updateFeedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/updateFeedback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/updateReview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/updateReview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/updateSupport.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/updateSupport.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -202,7 +211,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739834171236</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="abc">
+      <option name="closed" value="true" />
+      <created>1739837720176</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739837720176</updated>
+    </task>
+    <task id="LOCAL-00010" summary="abc">
+      <option name="closed" value="true" />
+      <created>1739837723191</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1739837723191</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

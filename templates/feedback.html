@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Form</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <h1>Submit Feedback</h1>
+{% extends "other_base.html" %}
+{% block title %}Feedback{% endblock %}
+{% block content %}
+
+<h1>Submit Feedback</h1>
     <form method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="feedback" placeholder="Your Feedback" rows="5" required></textarea>
         <button type="submit">Submit</button>
     </form>
-    <a href="/">Back to Home</a>
-</body>
-</html>
+    <a class="btn btn-secondary" href="{{ url_for('home') }}">Back to Home</a>
+
+{% endblock %}

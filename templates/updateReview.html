@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Review</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <h1>Update Review</h1>
+{% extends "other_base.html" %}
+{% block title %}Support Form{% endblock %}
+{% block content %}
+
+<h1>Update Review</h1>
     <form method="POST">
         <input type="text" name="name" value="{{ review.name }}" required>
         <input type="email" name="email" value="{{ review.email }}" required>
@@ -16,6 +11,6 @@
         <input type="number" name="rating" value="{{ review.rating }}" min="1" max="5" required>
         <button type="submit">Update</button>
     </form>
-    <a href="/retrieveReview">Back to Review List</a>
-</body>
-</html>
+    <a class="btn btn-secondary" href="/retrieveReview">Back to Review List</a>
+
+{% endblock %}

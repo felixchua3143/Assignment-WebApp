@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback List</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <h1>Feedback List</h1>
+{% extends "feedback_base.html" %}
+{% block title %}Retrieve Feedback{% endblock %}
+{% block content %}
+
+<h1>Feedback List</h1>
     <div class="feedback-list">
         {% for feedback in feedback_list %}
         <div class="feedback-item">
@@ -20,6 +15,6 @@
         </div>
         {% endfor %}
     </div>
-    <a href="/">Back to Home</a>
-</body>
-</html>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+
+{% endblock %}

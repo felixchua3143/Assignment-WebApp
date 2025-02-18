@@ -6,7 +6,7 @@ from flask import Flask, render_template, redirect, url_for, request, session, B
 from flask_wtf import FlaskForm
 from werkzeug.utils import secure_filename
 from wtforms import StringField, IntegerField, FileField, FloatField, validators
-from Forms import CarbonCalForm, Feedback, Review, Support
+from Forms import CarbonCalForm, Feedback, Support, Review
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
@@ -290,7 +290,7 @@ def feedback_form():
 
         feedback_dict = get_shelve_data('feedback.db', 'Feedback')
         feedback_id = len(feedback_dict) + 1
-        feedback_dict[feedback_id] = Forms.Feedback(name, email, feedback).to_dict()
+        feedback_dict[feedback_id] = Feedback(name, email, feedback).to_dict()
         save_shelve_data('feedback.db', 'Feedback', feedback_dict)
 
         return render_template('success.html', message="Feedback submitted successfully!")
@@ -340,7 +340,7 @@ def review_form():
 
         review_dict = get_shelve_data('review.db', 'Review')
         review_id = len(review_dict) + 1
-        review_dict[review_id] = Forms.Review(name, email, product_name, review, rating).to_dict()
+        review_dict[review_id] = Review(name, email, product_name, review, rating).to_dict()
         save_shelve_data('review.db', 'Review', review_dict)
 
         return render_template('success.html', message="Review submitted successfully!")
@@ -390,7 +390,7 @@ def support_form():
 
         support_dict = get_shelve_data('support.db', 'Support')
         support_id = len(support_dict) + 1
-        support_dict[support_id] = Forms.Support(name, email, issue).to_dict()
+        support_dict[support_id] = Support(name, email, issue).to_dict()
         save_shelve_data('support.db', 'Support', support_dict)
 
         return render_template('success.html', message="Support request submitted successfully!")
@@ -428,7 +428,7 @@ def delete_support(id):
     return redirect(url_for('retrieve_support'))
 
 
-def get_shelve_data(self, db_name, key):
+def get_shelve_data(db_name, key):
     db = shelve.open(db_name, 'c')
     if key not in db:
         db[key] = {}
@@ -437,11 +437,11 @@ def get_shelve_data(self, db_name, key):
     return data
 
 
-def save_shelve_data(self, db_name, key, data):
+def save_shelve_data(db_name, key, data):
     db = shelve.open(db_name, 'c')
     db[key] = data
     db.close()
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
