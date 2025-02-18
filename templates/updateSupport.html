@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Support Request</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Update Support Request</h1>
+    <form method="POST">
+        <input type="text" name="name" value="{{ support.name }}" required>
+        <input type="email" name="email" value="{{ support.email }}" required>
+        <textarea name="issue" rows="5" required>{{ support.issue }}</textarea>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/retrieveSupport">Back to Support List</a>
+</body>
+</html>
