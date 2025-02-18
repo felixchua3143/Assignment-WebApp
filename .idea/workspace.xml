@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6be49ad0-223a-4e63-96ed-c15efd7f88e5" name="Changes" comment="abc">
+      <change afterPath="$PROJECT_DIR$/feedback.db.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback.db.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback.db.dir" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/database.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/database.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/retrieveFeedback.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/retrieveReviews.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/retrieveSupport.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/review.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/success.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/support.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/updateFeedback.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/updateReview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/updateSupport.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/feedback.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/_notifications.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739833061620</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="abc">
+      <option name="closed" value="true" />
+      <created>1739834171236</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739834171236</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

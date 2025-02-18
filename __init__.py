@@ -2,19 +2,21 @@ import carbon_cal
 import os
 import shelve
 
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import Flask, render_template, redirect, url_for, request, session, Blueprint, flash
 from flask_wtf import FlaskForm
 from werkzeug.utils import secure_filename
 from wtforms import StringField, IntegerField, FileField, FloatField, validators
-from Forms import CarbonCalForm
+from Forms import CarbonCalForm, Feedback, Review, Support
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
+views = Blueprint('views', __name__)
+DATABASE_FILE = "database.db"
 users = [
     {'email': 'admin@gmail.com', 'password': 'admin', 'is_admin': True},
-    {'email': 'user@example.com', 'password': 'user123', 'is_admin': False}
+    {'email': 'user@example.com', 'password': 'user@example.com', 'is_admin': False}
 ]
 
 if not os.path.exists(app.config['UPLOAD_FOLDER']):
@@ -41,18 +43,24 @@ def allowed_file(filename):
 def index():
     return render_template('index.html')
 
-
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        email = request.form['email']
+        username = request.form['username']
         password = request.form['password']
-        # Add new user (In real apps, you should store in a database)
-        users.append({'email': email, 'password': password, 'is_admin': False})
-        return redirect(url_for('index'))
-    return render_template('signup.html')
+
+        with shelve.open(DATABASE_FILE) as db:
+            if username in db:
+                flash("Username already exists!", "danger")
+            else:
+                db[username] = {'username': username, 'password': password}
+                flash("Account created successfully!", "success")
+                return redirect(url_for('views.login'))
+
+    return render_template('signup.html', title="Sign Up")
 
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     email = request.form['email']
     password = request.form['password']
@@ -271,7 +279,9 @@ def create_cal_spendings():
     return render_template('carbon_cal_spendings.html', form=create_cal_form)
 
 
-@app.route('/feedback.html', methods=['GET', 'POST'])
+@app.route('/feedback', methods=['GET', 'POST'])
+
+
 def feedback_form():
     if request.method == 'POST':
         name = request.form['name']
@@ -340,104 +350,97 @@ def review_form():
 @app.route('/retrieveReview')
 def retrieve_review():
     review_dict = get_shelve_data('review.db', 'Review')
-    if not review_dict:
-        review_dict = {}
     review_list = [{"id": key, **review_dict[key]} for key in review_dict]
-    return render_template('retrieveReapp.html', review_list=review_list)
+    return render_template('retrieveReview.html', review_list=review_list)
 
 
-def get_shelve_data(db_name, key):
-    with shelve.open(db_name, 'c') as db:
-        if key not in db:
-            db[key] = {}
-        return db[key]
+@app.route('/updateReview/<int:id>', methods=['GET', 'POST'])
+def update_review(id):
+    review_dict = get_shelve_data('review.db', 'Review')
+    review = review_dict.get(id)
 
-
-def save_shelve_data(db_name, key, data):
-    with shelve.open(db_name, 'c') as db:
-        db[key] = data
-
-    @app.route('/updateReview/<int:id>', methods=['GET', 'POST'])
-    def update_review(id):
-        review_dict = get_shelve_data('review.db', 'Review')
-        review = review_dict.get(id)
-
-        if request.method == 'POST':
-            review['name'] = request.form['name']
-            review['email'] = request.form['email']
-            review['product_name'] = request.form['product_name']
-            review['review'] = request.form['review']
-            review['rating'] = request.form['rating']
-            review_dict[id] = review
-            save_shelve_data('review.db', 'Review', review_dict)
-            return redirect(url_for('retrieve_review'))
-
-        return render_template('updateReview.html', review=review, id=id)
-
-    @app.route('/deleteReview/<int:id>', methods=['POST'])
-    def delete_review(id):
-        review_dict = get_shelve_data('review.db', 'Review')
-        review_dict.pop(id, None)
+    if request.method == 'POST':
+        review['name'] = request.form['name']
+        review['email'] = request.form['email']
+        review['product_name'] = request.form['product_name']
+        review['review'] = request.form['review']
+        review['rating'] = request.form['rating']
+        review_dict[id] = review
         save_shelve_data('review.db', 'Review', review_dict)
         return redirect(url_for('retrieve_review'))
 
-        # Support CRUD
+    return render_template('updateReview.html', review=review, id=id)
 
-    @app.route('/support', methods=['GET', 'POST'])
-    def support_form():
-        if request.method == 'POST':
-            name = request.form['name']
-            email = request.form['email']
-            issue = request.form['issue']
 
-            support_dict = get_shelve_data('support.db', 'Support')
-            support_id = len(support_dict) + 1
-            support_dict[support_id] = Forms.Support(name, email, issue).to_dict()
-            save_shelve_data('support.db', 'Support', support_dict)
+@app.route('/deleteReview/<int:id>', methods=['POST'])
+def delete_review(id):
+    review_dict = get_shelve_data('review.db', 'Review')
+    review_dict.pop(id, None)
+    save_shelve_data('review.db', 'Review', review_dict)
+    return redirect(url_for('retrieve_review'))
 
-            return render_template('success.html', message="Support request submitted successfully!")
-        return render_template('support.html')
 
-    @app.route('/retrieveSupport')
-    def retrieve_support():
+# Support CRUD
+@app.route('/support', methods=['GET', 'POST'])
+def support_form():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        issue = request.form['issue']
+
         support_dict = get_shelve_data('support.db', 'Support')
-        support_list = [{"id": key, **support_dict[key]} for key in support_dict]
-        return render_template('retrieveSupport.html', support_list=support_list)
+        support_id = len(support_dict) + 1
+        support_dict[support_id] = Forms.Support(name, email, issue).to_dict()
+        save_shelve_data('support.db', 'Support', support_dict)
 
-    @app.route('/updateSupport/<int:id>', methods=['GET', 'POST'])
-    def update_support(id):
-        support_dict = get_shelve_data('support.db', 'Support')
-        support = support_dict.get(id)
+        return render_template('success.html', message="Support request submitted successfully!")
+    return render_template('support.html')
 
-        if request.method == 'POST':
-            support['name'] = request.form['name']
-            support['email'] = request.form['email']
-            support['issue'] = request.form['issue']
-            support_dict[id] = support
-            save_shelve_data('support.db', 'Support', support_dict)
-            return redirect(url_for('retrieve_support'))
 
-        return render_template('updateSupport.html', support=support, id=id)
+@app.route('/retrieveSupport')
+def retrieve_support():
+    support_dict = get_shelve_data('support.db', 'Support')
+    support_list = [{"id": key, **support_dict[key]} for key in support_dict]
+    return render_template('retrieveSupport.html', support_list=support_list)
 
-    @app.route('/deleteSupport/<int:id>', methods=['POST'])
-    def delete_support(id):
-        support_dict = get_shelve_data('support.db', 'Support')
-        support_dict.pop(id, None)
+
+@app.route('/updateSupport/<int:id>', methods=['GET', 'POST'])
+def update_support(id):
+    support_dict = get_shelve_data('support.db', 'Support')
+    support = support_dict.get(id)
+
+    if request.method == 'POST':
+        support['name'] = request.form['name']
+        support['email'] = request.form['email']
+        support['issue'] = request.form['issue']
+        support_dict[id] = support
         save_shelve_data('support.db', 'Support', support_dict)
         return redirect(url_for('retrieve_support'))
 
-    def get_shelve_data(db_name, key):
-        db = shelve.open(db_name, 'c')
-        if key not in db:
-            db[key] = {}
-        data = db[key]
-        db.close()
-        return data
+    return render_template('updateSupport.html', support=support, id=id)
 
-    def save_shelve_data(db_name, key, data):
-        db = shelve.open(db_name, 'c')
-        db[key] = data
-        db.close()
+
+@app.route('/deleteSupport/<int:id>', methods=['POST'])
+def delete_support(id):
+    support_dict = get_shelve_data('support.db', 'Support')
+    support_dict.pop(id, None)
+    save_shelve_data('support.db', 'Support', support_dict)
+    return redirect(url_for('retrieve_support'))
+
+
+def get_shelve_data(self, db_name, key):
+    db = shelve.open(db_name, 'c')
+    if key not in db:
+        db[key] = {}
+    data = db[key]
+    db.close()
+    return data
+
+
+def save_shelve_data(self, db_name, key, data):
+    db = shelve.open(db_name, 'c')
+    db[key] = data
+    db.close()
 
 
 if __name__ == '__main__':
