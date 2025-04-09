@@ -7,7 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6be49ad0-223a-4e63-96ed-c15efd7f88e5" name="Changes" comment="abc" />
+    <list default="true" id="6be49ad0-223a-4e63-96ed-c15efd7f88e5" name="Changes" comment="abc">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,8 +56,9 @@
     "Python.read_json.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "G:/Document/School Stuff/Year 1/Sem 2/App Dev/SimpleWebApp5",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+    "last_opened_file_path": "G:/Document/School Stuff/Year 1/Sem 2/App Dev/IT1666-Group4_FinalSolution",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
